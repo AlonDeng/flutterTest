@@ -4,8 +4,8 @@ class SignUpState {
   /// 响应变量用 get set 包下
 
   final _obj = ''.obs;
-  set obj(value) => this._obj.value = value;
-  get obj => this._obj.value;
+  set obj(value) => _obj.value = value;
+  get obj => _obj.value;
 
   // SignUpState() {}
 }

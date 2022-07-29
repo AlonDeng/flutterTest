@@ -53,7 +53,7 @@ class WelcomePage extends GetView<WelcomeController> {
       margin: EdgeInsets.only(top: marginTop.h),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             width: 80.w,
             height: 80.w,
             child: Image.asset(
@@ -61,8 +61,8 @@ class WelcomePage extends GetView<WelcomeController> {
               fit: BoxFit.none,
             ),
           ),
-          Spacer(),
-          Container(
+          const Spacer(),
+          SizedBox(
             width: 195.w,
             child: Text(
               intro,
@@ -108,12 +108,12 @@ class WelcomePage extends GetView<WelcomeController> {
             }
             return AppColors.primaryElement;
           }),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+          shape: MaterialStateProperty.all(const RoundedRectangleBorder(
             borderRadius: Radii.k6pxRadius,
           )),
         ),
-        child: Text("Get started"),
         onPressed: controller.handleNavSignIn,
+        child: const Text("Get started"),
       ),
     );
   }
@@ -141,7 +141,7 @@ class WelcomePage extends GetView<WelcomeController> {
               "You can get Premium to unlock hundreds of publications",
               40,
             ),
-            Spacer(),
+            const Spacer(),
             _buildStartButton(context),
           ],
         ),

@@ -7,7 +7,7 @@ import '../index.dart';
 import 'widgets.dart';
 
 class NewsPageList extends StatefulWidget {
-  NewsPageList({Key? key}) : super(key: key);
+  const NewsPageList({Key? key}) : super(key: key);
 
   @override
   _NewsPageListState createState() => _NewsPageListState();

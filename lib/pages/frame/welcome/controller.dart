@@ -1,4 +1,3 @@
-import 'package:alon/common/routers/routes.dart';
 import 'package:alon/common/store/store.dart';
 import 'package:get/get.dart';
 
@@ -15,8 +14,4 @@ class WelcomeController extends GetxController {
     // Get.offAndToNamed(AppRoutes.SIGN_IN);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 }

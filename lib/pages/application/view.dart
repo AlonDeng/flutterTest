@@ -23,7 +23,7 @@ class ApplicationPage extends GetView<ApplicationController> {
             )),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: AppColors.primaryText,
             ),
@@ -35,15 +35,15 @@ class ApplicationPage extends GetView<ApplicationController> {
   // 内容页
   Widget _buildPageView() {
     return PageView(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
+      controller: controller.pageController,
+      onPageChanged: controller.handlePageChanged,
       children: <Widget>[
         MainPage(),
         CategoryPage(),
-        Text('BookmarksPage'),
-        Text('AccountPage'),
+        const Text('BookmarksPage'),
+        const Text('AccountPage'),
       ],
-      controller: controller.pageController,
-      onPageChanged: controller.handlePageChanged,
     );
   }
 

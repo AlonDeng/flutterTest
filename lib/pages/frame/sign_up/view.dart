@@ -58,7 +58,7 @@ class SignUpPage extends GetView<SignUpController> {
           Container(
             height: 44.h,
             margin: EdgeInsets.only(top: 15.h),
-            child: btnFlatButtonWidget(
+            child: btnWidget(
               onPressed: controller.handleSignUp,
               width: 295.w,
               fontWeight: FontWeight.w600,
@@ -69,7 +69,7 @@ class SignUpPage extends GetView<SignUpController> {
 
           // Fogot password
           Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: TextButton(
               onPressed: controller.handleFogotPassword,
               child: Text(
@@ -118,13 +118,13 @@ class SignUpPage extends GetView<SignUpController> {
                   width: 88,
                   iconFileName: "twitter",
                 ),
-                Spacer(),
+                const Spacer(),
                 btnFlatButtonBorderOnlyWidget(
                   onPressed: () {},
                   width: 88,
                   iconFileName: "google",
                 ),
-                Spacer(),
+                const Spacer(),
                 btnFlatButtonBorderOnlyWidget(
                   onPressed: () {},
                   width: 88,
@@ -142,7 +142,7 @@ class SignUpPage extends GetView<SignUpController> {
   Widget _buildHaveAccountButton() {
     return Container(
       margin: EdgeInsets.only(bottom: 20.h),
-      child: btnFlatButtonWidget(
+      child: btnWidget(
         onPressed: controller.handleNavPop,
         width: 294,
         gbColor: AppColors.secondaryElement,
@@ -160,7 +160,7 @@ class SignUpPage extends GetView<SignUpController> {
       resizeToAvoidBottomInset: false,
       appBar: transparentAppBar(
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: AppColors.primaryText,
           ),
@@ -168,7 +168,7 @@ class SignUpPage extends GetView<SignUpController> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.info_outline,
               color: AppColors.primaryText,
             ),
@@ -179,10 +179,10 @@ class SignUpPage extends GetView<SignUpController> {
       body: Center(
         child: Column(
           children: <Widget>[
-            Divider(height: 1),
+            const Divider(height: 1),
             _buildLogo(),
             _buildInputForm(),
-            Spacer(),
+            const Spacer(),
             _buildThirdPartyLogin(),
             _buildHaveAccountButton(),
           ],

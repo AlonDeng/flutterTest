@@ -61,7 +61,7 @@ class ApplicationController extends GetxController {
       } on PlatformException {
         print('falied to get initial uri');
       } on FormatException catch (err) {
-        print('malformed initial uri, ' + err.toString());
+        print('malformed initial uri, $err');
       }
     }
   }
@@ -95,7 +95,7 @@ class ApplicationController extends GetxController {
     // 准备一些静态数据
     tabTitles = ['Welcome', 'Cagegory', 'Bookmarks', 'Account'];
     bottomTabs = <BottomNavigationBarItem>[
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(
           Iconfont.home,
           color: AppColors.tabBarElement,
@@ -107,7 +107,7 @@ class ApplicationController extends GetxController {
         label: 'main',
         backgroundColor: AppColors.primaryBackground,
       ),
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(
           Iconfont.grid,
           color: AppColors.tabBarElement,
@@ -119,7 +119,7 @@ class ApplicationController extends GetxController {
         label: 'category',
         backgroundColor: AppColors.primaryBackground,
       ),
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(
           Iconfont.tag,
           color: AppColors.tabBarElement,
@@ -131,7 +131,7 @@ class ApplicationController extends GetxController {
         label: 'tag',
         backgroundColor: AppColors.primaryBackground,
       ),
-      new BottomNavigationBarItem(
+      const BottomNavigationBarItem(
         icon: Icon(
           Iconfont.me,
           color: AppColors.tabBarElement,
@@ -144,18 +144,10 @@ class ApplicationController extends GetxController {
         backgroundColor: AppColors.primaryBackground,
       ),
     ];
-    pageController = new PageController(initialPage: state.page);
+    pageController = PageController(initialPage: state.page);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   @override
   void dispose() {

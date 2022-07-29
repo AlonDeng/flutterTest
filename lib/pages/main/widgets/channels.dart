@@ -7,14 +7,14 @@ import '../index.dart';
 
 /// 频道导航
 class NewsChannelsWidget extends GetView<MainController> {
-  NewsChannelsWidget();
+  const NewsChannelsWidget();
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => controller.state.channels == null
           ? Container()
-          : Container(
+          : SizedBox(
               height: 137.w,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -24,7 +24,7 @@ class NewsChannelsWidget extends GetView<MainController> {
                     return Container(
                       width: 70.w,
                       height: 97.w,
-                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
                       child: InkWell(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -33,7 +33,7 @@ class NewsChannelsWidget extends GetView<MainController> {
                             // 图标
                             Container(
                               height: 64.w,
-                              margin: EdgeInsets.symmetric(horizontal: 3),
+                              margin: const EdgeInsets.symmetric(horizontal: 3),
                               child: Stack(
                                 alignment: Alignment.center,
                                 children: [
@@ -43,7 +43,7 @@ class NewsChannelsWidget extends GetView<MainController> {
                                     right: 0,
                                     child: Container(
                                       height: 64.w,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: AppColors.primaryBackground,
                                         boxShadow: [
                                           Shadows.primaryShadow,

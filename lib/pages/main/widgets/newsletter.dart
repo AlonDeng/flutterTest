@@ -27,7 +27,7 @@ class NewsletterWidget extends GetView<MainController> {
                   color: AppColors.thirdElement,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
                 icon: Icon(
                   Icons.close,
@@ -50,8 +50,8 @@ class NewsletterWidget extends GetView<MainController> {
 
           // btn subcrible
           Padding(
-            padding: EdgeInsets.only(top: 15),
-            child: btnFlatButtonWidget(
+            padding: const EdgeInsets.only(top: 15),
+            child: btnWidget(
               onPressed: () {},
               width: 335.w,
               height: 44.h,
@@ -67,7 +67,7 @@ class NewsletterWidget extends GetView<MainController> {
             child: Text.rich(TextSpan(children: <TextSpan>[
               TextSpan(
                 text: 'By clicking on Subscribe button you agree to accept',
-                style: new TextStyle(
+                style: TextStyle(
                   color: AppColors.thirdElementText,
                   fontFamily: "Avenir",
                   fontWeight: FontWeight.w400,
@@ -76,7 +76,7 @@ class NewsletterWidget extends GetView<MainController> {
               ),
               TextSpan(
                 text: ' Privacy Policy',
-                style: new TextStyle(
+                style: TextStyle(
                   color: AppColors.secondaryElementText,
                   fontFamily: "Avenir",
                   fontWeight: FontWeight.w400,

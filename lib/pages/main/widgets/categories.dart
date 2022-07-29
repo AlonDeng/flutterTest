@@ -7,7 +7,7 @@ import '../index.dart';
 
 /// 分类导航
 class NewsCategoriesWidget extends GetView<MainController> {
-  NewsCategoriesWidget();
+  const NewsCategoriesWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class NewsCategoriesWidget extends GetView<MainController> {
                   return Container(
                     alignment: Alignment.center,
                     height: 52.h,
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: GestureDetector(
                       child: Text(
                         item.title,

@@ -15,7 +15,7 @@ class AdWidget extends GetView<MainController> {
       padding: EdgeInsets.all(20.w),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border.fromBorderSide(Borders.primaryBorder),
           borderRadius: Radii.k6pxRadius,
         ),

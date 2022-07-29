@@ -11,7 +11,7 @@ import 'ad.dart';
 
 /// 新闻行 Item
 class NewsListWidget extends GetView<MainController> {
-  NewsListWidget();
+  const NewsListWidget();
 
   Widget _buildListItem(NewsItem item) {
     return Container(
@@ -47,7 +47,7 @@ class NewsListWidget extends GetView<MainController> {
               children: <Widget>[
                 // 作者
                 Container(
-                  margin: EdgeInsets.all(0),
+                  margin: const EdgeInsets.all(0),
                   child: Text(
                     item.author ?? "",
                     style: TextStyle(
@@ -83,7 +83,7 @@ class NewsListWidget extends GetView<MainController> {
                   ),
                 ),
                 // Spacer
-                Spacer(),
+                const Spacer(),
                 // 一行 3 列
                 Container(
                   child: Row(
@@ -127,9 +127,9 @@ class NewsListWidget extends GetView<MainController> {
                         ),
                       ),
                       // 更多
-                      Spacer(),
+                      const Spacer(),
                       InkWell(
-                        child: Icon(
+                        child: const Icon(
                           Icons.more_horiz,
                           color: AppColors.primaryText,
                           size: 24,
@@ -156,7 +156,7 @@ class NewsListWidget extends GetView<MainController> {
               // 新闻行
               List<Widget> widgets = <Widget>[
                 _buildListItem(item),
-                Divider(height: 1),
+                const Divider(height: 1),
               ];
 
               // 每 5 条 显示广告
@@ -164,7 +164,7 @@ class NewsListWidget extends GetView<MainController> {
               if (((index + 1) % 5) == 0) {
                 widgets.addAll(<Widget>[
                   AdWidget(),
-                  Divider(height: 1),
+                  const Divider(height: 1),
                 ]);
               }
 

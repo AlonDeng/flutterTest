@@ -9,7 +9,7 @@ import '../index.dart';
 
 /// 推荐阅读
 class NewsRecommendWidget extends GetView<MainController> {
-  NewsRecommendWidget();
+  const NewsRecommendWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -115,9 +115,9 @@ class NewsRecommendWidget extends GetView<MainController> {
                         ),
                       ),
                       // 更多
-                      Spacer(),
+                      const Spacer(),
                       InkWell(
-                        child: Icon(
+                        child: const Icon(
                           Icons.more_horiz,
                           color: AppColors.primaryText,
                           size: 24,

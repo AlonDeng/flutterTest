@@ -7,7 +7,7 @@ import 'widgets/widgets.dart';
 class CategoryPage extends GetView<CategoryController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: NewsPageList(),
     );
   }

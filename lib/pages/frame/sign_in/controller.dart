@@ -56,10 +56,6 @@ class SignInController extends GetxController {
     Get.offAndToNamed(AppRoutes.Application);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void dispose() {

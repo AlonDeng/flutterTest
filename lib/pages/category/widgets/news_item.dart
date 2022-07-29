@@ -35,7 +35,7 @@ Widget newsListItem(NewsItem item) {
             children: <Widget>[
               // 作者
               Container(
-                margin: EdgeInsets.all(0),
+                margin: const EdgeInsets.all(0),
                 child: Text(
                   item.author ?? "",
                   style: TextStyle(
@@ -72,7 +72,7 @@ Widget newsListItem(NewsItem item) {
                 ),
               ),
               // Spacer
-              Spacer(),
+              const Spacer(),
               // 一行 3 列
               Container(
                 child: Row(
@@ -118,7 +118,7 @@ Widget newsListItem(NewsItem item) {
                       ),
                     ),
                     // 更多
-                    Spacer(),
+                    const Spacer(),
                     InkWell(
                       child: Icon(
                         Icons.more_horiz,

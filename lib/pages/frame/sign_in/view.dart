@@ -30,7 +30,7 @@ class SignInPage extends GetView<SignInController> {
                     height: 76.w,
                     decoration: BoxDecoration(
                       color: AppColors.primaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         Shadows.primaryShadow,
                       ],
                       borderRadius: BorderRadius.all(
@@ -82,70 +82,81 @@ class SignInPage extends GetView<SignInController> {
   // 登录表单
   Widget _buildInputForm() {
     return Container(
-      width: 295.w,
+      // width: 295.w,
       // height: 204,
-      margin: EdgeInsets.only(top: 49.h),
-      child: Column(
-        children: [
-          // email input
-          inputTextEdit(
-            controller: controller.emailController,
-            keyboardType: TextInputType.emailAddress,
-            hintText: "Email",
-            marginTop: 0,
-            // autofocus: true,
-          ),
-          // password input
-          inputTextEdit(
-            controller: controller.passController,
-            keyboardType: TextInputType.visiblePassword,
-            hintText: "Password",
-            isPassword: true,
-          ),
-
-          // 注册、登录 横向布局
-          Container(
-            height: 44.h,
-            margin: EdgeInsets.only(top: 15.h),
-            child: Row(
-              children: [
-                // 注册
-                btnFlatButtonWidget(
-                  onPressed: controller.handleNavSignUp,
-                  gbColor: AppColors.thirdElement,
-                  title: "Sign up",
-                ),
-                Spacer(),
-                // 登录
-                btnFlatButtonWidget(
-                  onPressed: controller.handleSignIn,
-                  gbColor: AppColors.primaryElement,
-                  title: "Sign in",
-                ),
-              ],
+      // margin: EdgeInsets.only(top: 49.h),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Column(
+          children: [
+            // email input
+            inputTextEdit(
+              controller: controller.emailController,
+              keyboardType: TextInputType.emailAddress,
+              labelText: "signIN_email.insert_account".tr,
+              // autofocus: true,
             ),
-          ),
-          // Spacer(),
+            // password input
+            inputTextEdit(
+              controller: controller.passController,
+              keyboardType: TextInputType.visiblePassword,
+              labelText: "signIN_email.insert_pw".tr,
+              isPassword: true,
+            ),
 
-          // Fogot password
-          Padding(
-            padding: EdgeInsets.only(top: 8.0),
-            child: TextButton(
-              onPressed: controller.handleFogotPassword,
-              child: Text(
-                "Fogot password?",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AppColors.secondaryElementText,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
-                  height: 1, // 设置下行高，否则字体下沉
+            Padding(
+                padding: EdgeInsets.only(top: 14.h, bottom: 35.h),
+                child: btnWidget(
+                  onPressed: () {},
+                  isbgColor: false,
+                  title: 'signIN_email.desc'.tr,
+                  fontSize: 12.sp,
+                )),
+
+            // 注册、登录 横向布局
+            Container(
+              height: 50.h,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black12,
+                        offset: Offset(0.0, 15.0), //阴影xy轴偏移量
+                        blurRadius: 15.0, //阴影模糊程度
+                        spreadRadius: 1.0 //阴影扩散程度
+                        )
+                  ]),
+              child: // 登录
+                  btnWidget(
+                onPressed: () {},
+                gbColor: AppColors.primaryElement,
+                title: "Sign in",
+                isFlex: true,
+              ),
+            ),
+            // Spacer(),
+
+            // Fogot password
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: TextButton(
+                onPressed: controller.handleFogotPassword,
+                child: Text(
+                  "Fogot password?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.secondaryElementText,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16.sp,
+                    height: 1, // 设置下行高，否则字体下沉
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -178,13 +189,13 @@ class SignInPage extends GetView<SignInController> {
                   width: 88,
                   iconFileName: "twitter",
                 ),
-                Spacer(),
+                const Spacer(),
                 btnFlatButtonBorderOnlyWidget(
                   onPressed: () {},
                   width: 88,
                   iconFileName: "google",
                 ),
-                Spacer(),
+                const Spacer(),
                 btnFlatButtonBorderOnlyWidget(
                   onPressed: () {},
                   width: 88,
@@ -202,7 +213,7 @@ class SignInPage extends GetView<SignInController> {
   Widget _buildSignupButton() {
     return Container(
       margin: EdgeInsets.only(bottom: 20.h),
-      child: btnFlatButtonWidget(
+      child: btnWidget(
         onPressed: controller.handleNavSignUp,
         width: 294,
         gbColor: AppColors.secondaryElement,
@@ -216,10 +227,33 @@ class SignInPage extends GetView<SignInController> {
 
   Widget _buildTop() {
     return Container(
-      color: Colors.red,
       margin: EdgeInsets.only(top: ScreenUtil().statusBarHeight),
       child: Column(
-        children: [Text('skip')],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 10.h, bottom: 6.h),
+            padding: EdgeInsets.only(top: 10.h),
+            child: Row(
+              children: [
+                const Spacer(),
+                btnWidget(
+                    title: "signIN_email.skip".tr,
+                    onPressed: () {},
+                    isbgColor: false,
+                    fontSize: 14.sp,
+                    fontColor: const Color(0xff8E8E93))
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Text(
+              "signIN_email.title".tr,
+              style: TextStyle(color: const Color(0xff323232), fontSize: 24.sp),
+            ),
+          )
+        ],
       ),
       // child: Text('what are you doing?'),
     );
@@ -235,7 +269,7 @@ class SignInPage extends GetView<SignInController> {
             // _buildLogo(),
             _buildTop(),
             _buildInputForm(),
-            Spacer(),
+            const Spacer(),
             _buildThirdPartyLogin(),
             _buildSignupButton(),
           ],

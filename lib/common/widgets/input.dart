@@ -7,33 +7,35 @@ Widget inputTextEdit({
   TextEditingController? controller,
   TextInputType keyboardType = TextInputType.text,
   String? hintText,
+  String? labelText,
   bool isPassword = false,
-  double marginTop = 15,
+  double marginTop = 10,
   bool autofocus = false,
 }) {
   return Container(
-    height: 44.h,
+    // height: 44.h,
     margin: EdgeInsets.only(top: marginTop.h),
-    decoration: BoxDecoration(
-      color: AppColors.secondaryElement,
-      borderRadius: Radii.k6pxRadius,
-    ),
-    child: TextField(
+    decoration: const BoxDecoration(
+        // borderRadius: Radii.k6pxRadius,
+        ),
+    child: TextFormField(
       autofocus: autofocus,
       controller: controller,
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        labelText: labelText,
         hintText: hintText,
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 0, 9),
-        border: InputBorder.none,
+        // contentPadding: const EdgeInsets.fromLTRB(20, 10, 0, 9),
+        border: UnderlineInputBorder(),
+        // border: InputBorder.none,
       ),
       style: TextStyle(
         color: AppColors.primaryText,
         fontFamily: "Avenir",
         fontWeight: FontWeight.w400,
-        fontSize: 18.sp,
+        fontSize: 14.sp,
       ),
-      maxLines: 1,
+      // maxLines: 1,
       autocorrect: false, // 自动纠正
       obscureText: isPassword, // 隐藏输入内容, 密码框
     ),
@@ -53,7 +55,7 @@ Widget inputEmailEdit({
   return Container(
     height: 44.h,
     margin: EdgeInsets.only(top: marginTop.h),
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       color: AppColors.primaryBackground,
       borderRadius: Radii.k6pxRadius,
       boxShadow: [
@@ -70,9 +72,9 @@ Widget inputEmailEdit({
       keyboardType: keyboardType,
       decoration: InputDecoration(
         hintText: hintText,
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 0, 9),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 0, 9),
         border: InputBorder.none,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: AppColors.primaryText,
         ),
       ),
